@@ -28,3 +28,12 @@ Flatiron School has decided to dabble in the food industry and just opened up a 
 * This app uses Semantic for styling - you will not need to worry about any errors here.
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/Flatipotle-Debugging-Lab'>Flatipotle Debugging Lab</a> on Learn.co and start learning to code for free.</p>
+
+
+## CA Lecture Talking Points
+
+* Controlled Forms
+* Functional vs. Class Components
+    * When to pass props into the component declaration & when not to pass props
+* Function "Storage"
+* Binding functions to `this`

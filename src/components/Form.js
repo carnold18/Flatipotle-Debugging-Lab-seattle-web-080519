@@ -16,9 +16,11 @@ class Form extends Component {
     ...DEFAULT_STATE
   }
 
-  handleSubmit() {
+  handleSubmit = (event) => {
+    // debugger
     event.preventDefault()
     document.getElementById("order-form").reset()
+    // console.log(this)
     this.props.addOrder(this.state)
 
     this.setState({
@@ -26,10 +28,13 @@ class Form extends Component {
     })
   }
 
-  handleChange() {
+  handleChange = (event) => {
+    // debugger
     const itemType = event.target.name
     const item = event.target.value
-
+    console.log(itemType)
+    console.log(item)
+    console.log(this)
     !this.state[`${itemType}`].includes(item) ?
       this.setState({
         [itemType]: this.state[`${itemType}`].concat(item)
@@ -43,28 +48,29 @@ class Form extends Component {
   }
 
   render() {
+    // console.log(this.state)
     return(
       <div className="ui raised container segment">
         <h1 className="ui block header">Order Form</h1>
         <form className="ui form" id="order-form" onSubmit={ this.handleSubmit }>
           <ProteinForm
             protein={ this.state.protein }
-            handleOnChange={ this.handleChange }
+            handleChange={ this.handleChange }
           />
 
           <FillingForm
             fillings={ this.state.fillings }
-            handleOnChange={ this.handleChange }
+            handleChange={ this.handleChange }
           />
 
           <ToppingForm
             toppings={ this.state.toppings }
-            handleOnChange={ this.handleChange }
+            handleChange={ this.handleChange }
           />
 
           <SideForm
             sides={ this.state.sides }
-            handleOnChange={ this.handleChange }
+            handleChange={ this.handleChange }
           />
 
           <br />
@@ -76,4 +82,4 @@ class Form extends Component {
   }
 }
 
-export default Form
+export default Form;
